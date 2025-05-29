@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR/VR Therapie Ondersteunende Interface</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #eaf7f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    header {
+      background-color: #2e8b8b;
+      color: white;
+      padding: 15px 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+    }
+    .exercise-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 30px 0;
+    }
+    .exercise-button {
+      padding: 12px 24px;
+      background-color: #4da6a6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .exercise-button:hover {
+      background-color: #6cc;
+    }
+    .info-panel {
+      background-color: white;
+      padding: 20px;
+      width: 360px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      border-radius: 10px;
+      display: none;
+      text-align: left;
+    }
+    .info-panel h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    VR/AR Therapie - Ondersteunende Interface
+  </header>
+
+  <p>Klik op een oefening om uitleg te krijgen. Deze interface ondersteunt een VR-therapiesessie (zoals stressvermindering of fobiecontrole).</p>
+
+  <div class="exercise-buttons">
+    <button class="exercise-button" onclick="toonInfo('Ademhalingsoefening', 'Volg in VR een visuele ademhalingsgids met een rustig landschap. Focus op 4 seconden inademen, 4 seconden vasthouden, 6 seconden uitademen.')">Ademhalingsoefening</button>
+    <button class="exercise-button" onclick="toonInfo('Rustgevend strand', 'Deze ervaring transporteert de gebruiker naar een kalm strand, ideaal voor stressreductie en mindfulness.')">Rustgevend strand</button>
+    <button class="exercise-button" onclick="toonInfo('Fobie Exposure', 'Stap voor stap geconfronteerd worden met je angst in een veilige virtuele omgeving, met begeleiding.')">Fobie Exposure</button>
+    <button class="exercise-button" onclick="toonInfo('Visualisatie training', 'Een VR-reis waarbij de gebruiker leert zich mentale veiligheid voor te stellen tijdens moeilijke momenten.')">Visualisatie training</button>
+  </div>
+
+  <div class="info-panel" id="infoPanel">
+    <h2 id="infoTitle"></h2>
+    <p id="infoDescription"></p>
+  </div>
+
+  <script>
+    function toonInfo(titel, beschrijving) {
+      document.getElementById('infoTitle').textContent = titel;
+      document.getElementById('infoDescription').textContent = beschrijving;
+      document.getElementById('infoPanel').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
